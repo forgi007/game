@@ -11,16 +11,17 @@ from typing import Tuple
 # - music: music to play in a loop
 
 story=[
-    {"image":"alien_green_stand", "text":"Kérlek válasszd az 1-est! .. vagy a 2-est", "choice":{"1":"1", "2":"coin_gold"}, "sound":"eep.wav"},
-    {"image":"coin_gold", "text":"Kérlek menjünk az alinhez, nyomj 'a'-t. Ha mást szeretnél nyomj b-est", "choice":{"a":"alien_green_stand", "b":"pexels-pixabay-40784"}, "sound":"coin_pickup.wav"},
-    {"image":"pexels-pixabay-40784", "text":"Kérlek menjünk az alinhez, nyomj 'a'-t. Ha mást szeretnél nyomj b-est", "choice":{"a":"alien_green_stand", "b":"2"}, "sound":"coin_pickup.wav"},
-    {"name":"1", "text":"blah, alien", "choice":{"a":"alien_green_stand"}},
+    {"image":"csontváz", "text":"Ha kék cicát szeretnél, nyomj 'K'-t. Lufi kutya: 'L'", "choice":{"k":"kék_cica", "l":"lufi_kutya"}, "sound":"eep.wav"},
+    {"image":"kék_cica", "text":"Mars boszi: 'M', lufi kutya: 'L', valami: 'V'", "choice":{"m":"mars_boszi", "l":"lufi_kutya", "v":"pexels-pixabay-40784"}, "sound":"coin_pickup.wav"},
+    {"name":"valami", "image":"pexels-pixabay-40784", "text":"Kérlek menjünk a kék cicához, nyomj 'k'-t!", "choice":{"k":"kék_cica"}, "sound":"coin_pickup.wav"},
+    {"image":"lufi_kutya", "text":"csontváz? 'C'", "choice":{"c":"csontváz"}},
+    {"image":"mars_boszi", "text":"csontváz? 'C'", "choice":{"c":"csontváz"}},
 ]
 story_node = story[0]
 prev_story_node = None
 
 # Set the width and height of your output window, in pixels
-WIDTH = 800
+WIDTH = 600
 HEIGHT = 600
 
 # Set up the player
