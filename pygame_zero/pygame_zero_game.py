@@ -21,7 +21,7 @@ from typing import Tuple
 from random import randint
 
 # Set the width and height of your output window, in pixels
-WIDTH = 800
+WIDTH = 1400
 HEIGHT = 600
 
 # Set up the player
@@ -66,7 +66,6 @@ def add_coin():
 
     # Schedule the next coin addition
     clock.schedule(add_coin, coin_countdown)  # noqa: F821
-
 
 def on_mouse_move(pos: Tuple):
     """Called whenever the mouse changes position

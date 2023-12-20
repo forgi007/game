@@ -12,7 +12,7 @@ from typing import Tuple
 
 story=[
     {"image":"csontváz", "text":"Ha kék cicát szeretnél, nyomj 'K'-t. Lufi kutya: 'L'", "choice":{"k":"kék_cica", "l":"lufi_kutya"}, "sound":"eep.wav"},
-    {"image":"kék_cica", "text":"Mars boszi: 'M', lufi kutya: 'L', valami: 'V'", "choice":{"m":"mars_boszi", "l":"lufi_kutya", "v":"pexels-pixabay-40784"}, "sound":"coin_pickup.wav"},
+    {"image":"kék_cica", "text":"Mars boccci: 'M', lufi kutya: 'L', valami: 'V'", "choice":{"m":"mars_boszi", "l":"lufi_kutya", "v":"pexels-pixabay-40784"}, "sound":"coin_pickup.wav"},
     {"name":"valami", "image":"pexels-pixabay-40784", "text":"Kérlek menjünk a kék cicához, nyomj 'k'-t!", "choice":{"k":"kék_cica"}, "sound":"coin_pickup.wav"},
     {"image":"lufi_kutya", "text":"csontváz? 'C'", "choice":{"c":"csontváz"}},
     {"image":"mars_boszi", "text":"csontváz? 'C'", "choice":{"c":"csontváz"}},
