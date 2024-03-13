@@ -428,7 +428,7 @@ while run:
             countdown += 11
 
         #global debug_img
-        debug_img = font.render(f"player.timer={player.timer}", True, WHITE)
+        debug_img = font.render(f"f{int(player.frame)} x{int(player.xSpeed)} y{int(player.ySpeed)} b{int(player.bottomCol)} t{int(player.topCol)} l{int(player.leftCol)} r{int(player.rightCol)}", True, WHITE)
         
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
