@@ -2,9 +2,14 @@ import pygame, time, random, math
 from pygame.locals import *
 pygame.display.init()
 pygame.mixer.init()
+pygame.init() 
 
 display = pygame.display.set_mode((480, 270))
 pygame.display.set_caption("Crystals of Time by SmellyFrog")
+
+WHITE = (255, 255, 255)
+font = pygame.font.SysFont(None, 32)
+debug_img = None
 
 spr_player = pygame.image.load("assets/lily.png").convert_alpha()
 spr_tiles = pygame.image.load("assets/tiles.png").convert_alpha()
@@ -33,6 +38,7 @@ class Player():
         self.faceRight = True
         self.timer = 0
     def update(self):
+
 
         self.x += self.xSpeed
         self.y += self.ySpeed
@@ -72,6 +78,7 @@ class Player():
         self.topCol = False
         self.leftCol = False
         self.rightCol = False
+
             
     def draw(self):
         display.blit(spr_player, (int(self.x), int(self.y) - 16), (self.frame * 32, (not self.faceRight) * 48, 32, 48))
@@ -185,17 +192,17 @@ layout = [("               ",
            "               ",
            "               ",
            "               ",
-           "               ",
-           "               ",
-           "               ",
+           "      C        ",
+           "     C C       ",
+           "      C        ",
            ),
           ("               ",
            "2              ",
            "2              ",
            "2              ",
            "2    P         ",
-           "2   222        ",
-           "200022200000   ",
+           "2   222 CCC    ",
+           "200022200000C  ",
            "111121211111000",
            "111111211111111",
            ),
@@ -203,9 +210,9 @@ layout = [("               ",
            "               ",
            "             C ",
            "               ",
-           "            000",
-           "     0  2     1",
-           "    01        1",
+           "     C      000",
+           "    C0  2     1",
+           "C C 01        1",
            "0000110000    1",
            "111111111100001",
            ),
@@ -387,7 +394,7 @@ while run:
 
         timer += 1
         if countdown <= 3000 and room_num >= 1:
-            countdown -= 1
+            countdown -= 0#1
 
         clock.tick(60)
 
@@ -419,6 +426,9 @@ while run:
         if player.timer > 0:
             player.timer -= 1
             countdown += 11
+
+        #global debug_img
+        debug_img = font.render(f"player.timer={player.timer}", True, WHITE)
         
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -452,7 +462,8 @@ while run:
             player_x = 42069
             collected = []
                         
-            
+        if debug_img:
+            display.blit(debug_img, (0, 270-32))
         pygame.display.flip()
 
     if player.x + 16 < 0:
